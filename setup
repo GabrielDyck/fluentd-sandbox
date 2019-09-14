@@ -16,8 +16,12 @@ Pisar el /etc/td-agent/td-agent.conf con el td-agent.conf de este directorio
 
 sudo systemctl restart td-agent
 
+sudo sysctl -w vm.max_map_count=262144
 
+docker run -d -e discovery.type=single-node -p 9200:9200 -p 9300:9300 elasticsearch:7.3.2
 
+Deberia estar corriendo nuestro container
+docker container ps 
 
 
 
