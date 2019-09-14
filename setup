@@ -8,7 +8,39 @@ tail /var/log/td-agent/td-agent.log
 
 sudo systemctl start td-agent
 
+
 sudo td-agent-gem install fluent-plugin-elasticsearch
+
+
+Pisar el /etc/td-agent/td-agent.conf con el td-agent.conf de este directorio
+
+sudo systemctl restart td-agent
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 docker pull fluent/fluentd
 
@@ -20,3 +52,17 @@ docker network create elasticsearch-network
 
 docker run -d --name elasticsearch --net elasticsearch-network -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" elasticsearch:7.3.2
 
+
+
+
+
+
+
+
+Bibliografia:
+
+https://www.digitalocean.com/community/tutorials/how-to-centralize-your-docker-logs-with-fluentd-and-elasticsearch-on-ubuntu-16-04
+https://hub.docker.com/r/fluent/fluentd/
+https://docs.fluentd.org/container-deployment/install-by-docker
+https://hub.docker.com/_/elasticsearch?tab=description
+https://docs.fluentd.org/v/0.12/
