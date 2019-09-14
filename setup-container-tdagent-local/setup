@@ -23,6 +23,10 @@ docker run -d -e discovery.type=single-node -p 9200:9200 -p 9300:9300 elasticsea
 Deberia estar corriendo nuestro container
 docker container ps 
 
+docker run  --log-driver=fluentd ubuntu /bin/echo 'Hello world'
+
+curl -XGET 'http://localhost:9200/_all/_search?q=*'
+
 
 Bibliografia:
 
