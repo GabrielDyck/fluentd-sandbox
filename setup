@@ -1,0 +1,22 @@
+
+Descargar fluentd de treasure-data :
+https://docs.fluentd.org/installation/install-by-deb
+Para ubuntu bionic:
+curl -L https://toolbelt.treasuredata.com/sh/install-ubuntu-bionic-td-agent3.sh | sh
+
+tail /var/log/td-agent/td-agent.log
+
+sudo systemctl start td-agent
+
+sudo td-agent-gem install fluent-plugin-elasticsearch
+
+docker pull fluent/fluentd
+
+docker run -d --name fluentd -p 24224:24224 -p 24224:24224/udp -v /data:/fluentd/log fluent/fluentd
+
+docker pull elasticsearch:7.3.2
+
+docker network create elasticsearch-network
+
+docker run -d --name elasticsearch --net elasticsearch-network -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" elasticsearch:7.3.2
+
