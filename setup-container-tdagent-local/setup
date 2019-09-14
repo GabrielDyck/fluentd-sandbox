@@ -24,45 +24,6 @@ Deberia estar corriendo nuestro container
 docker container ps 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-docker pull fluent/fluentd
-
-docker run -d --name fluentd -p 24224:24224 -p 24224:24224/udp -v /data:/fluentd/log fluent/fluentd
-
-docker pull elasticsearch:7.3.2
-
-docker network create elasticsearch-network
-
-docker run -d --name elasticsearch --net elasticsearch-network -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" elasticsearch:7.3.2
-
-
-
-
-
-
-
-
 Bibliografia:
 
 https://www.digitalocean.com/community/tutorials/how-to-centralize-your-docker-logs-with-fluentd-and-elasticsearch-on-ubuntu-16-04
