@@ -1,0 +1,7 @@
+
+
+
+
+Bibliografia:
+https://www.digitalocean.com/community/tutorials/how-to-set-up-an-elasticsearch-fluentd-and-kibana-efk-logging-stack-on-kubernetes
+https://kubernetes.io/docs/concepts/cluster-administration/logging/#using-a-node-logging-agent
